@@ -1,0 +1,73 @@
+ion-content {
+    --background: #24545D;
+  }
+  
+  .custom-grid {
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh; /* Mantén el grid al 100% de la altura de la pantalla */
+  }
+  
+  .first-row {
+    height: 15%; 
+    background-color: transparent;
+  }
+  
+  .second-row {
+    height: 85%;
+    background-color: #F5F4FE;
+    border-radius: 4% 4% 0% 0%;
+    padding: 2% 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px; /* Añade espacio entre los elementos */
+  }
+  
+  .second-row ion-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los inputs */
+  }
+  
+  .style-text-login {
+    margin-bottom: 5%;
+    font-weight: 700;;
+    color: #091e22;
+    margin-bottom: 0;
+  }
+  
+  .style-btn-registrate {
+    font-size: 12px;
+    color: #000000c9;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .style-login {
+    font-weight: 600;
+    font-style: italic;
+    color: #866A80;
+  }
+  
+  ion-button {
+    --background: #866A80;
+    --background-hover: #c49cbb;
+    --background-activated: #c49cbb;
+    --background-focused: #c49cbb;
+    --color: #091e22;
+    --border-radius: 18px;
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  ion-input.custom {
+    margin-top: 5%;
+    --background: #F5F4FE;
+    --color: #000000;
+    --placeholder-color: #000000;
+    --placeholder-opacity: 0.8;
+  }
+    

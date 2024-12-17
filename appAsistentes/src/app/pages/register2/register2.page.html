@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true">
+  <ion-grid class="custom-grid">
+    <ion-row class="first-row">
+      <ion-col size="12"></ion-col>
+    </ion-row>
+
+    <ion-row class="second-row">
+      <ion-col size="12">
+        <h2 class="style-text-login">Crear Cuenta</h2>
+        <p style="margin: 0; font-weight: 600;text-decoration: underline; color: black;">Datos personales</p>
+        <form [formGroup]="detallesForm" (ngSubmit)="guardarUsuarioCompleto()">
+          <ion-input label="Nombre" label-placement="floating" fill="outline" placeholder="Enter Nombre" class="custom"
+            color="medium" type="text" formControlName="nombres"></ion-input>
+
+          <div *ngIf="detallesForm.get('nombres')?.invalid && (detallesForm.get('nombres')?.dirty || 
+            detallesForm.get('nombres')?.touched)" id="alerta">
+            <div id="alerta" *ngIf="detallesForm.get('nombres')?.hasError('required')">
+              *El nombre es obligatorio
+            </div>
+          </div>
+
+          <ion-input label="Apellidos" label-placement="floating" fill="outline" placeholder="Enter Apellidos"
+            class="custom" color="medium" type="text" formControlName="apellidos"></ion-input>
+
+          <div *ngIf="detallesForm.get('apellidos')?.invalid && (detallesForm.get('apellidos')?.dirty || 
+          detallesForm.get('apellidos')?.touched)" id="alerta">
+
+            <div id="alerta" *ngIf="detallesForm.get('apellidos')?.hasError('required')">
+              *El nombre es obligatorio
+            </div>
+          </div>
+
+          <ion-input label="+569" label-placement="fixed" fill="outline" placeholder="Ingrese número de teléfono"
+            class="custom" color="medium" type="tel" formControlName="telefono" inputmode="numeric"></ion-input>
+          <div *ngIf="detallesForm.get('telefono')?.invalid && detallesForm.get('telefono')?.touched">
+            <p *ngIf="detallesForm.get('telefono')?.errors?.['required']">El número de teléfono es obligatorio.</p>
+            <p *ngIf="detallesForm.get('telefono')?.errors?.['pattern']">El teléfono debe tener 8 dígitos.</p>
+          </div>
+
+          <ion-button expand="block" class="style-btn-login" type="submit"
+            [disabled]="!detallesForm.valid">Registrarse!</ion-button>
+          <p class="style-btn-registrate">Ya tienes una cuenta?
+            <ion-router-link routerLink="/login" class="style-login">Inicia Sesión!</ion-router-link>
+          </p>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

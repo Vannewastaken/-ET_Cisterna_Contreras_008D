@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <ion-grid class="custom-grid">
+    <ion-row class="first-row">
+      <ion-col size="12">
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="second-row">
+      <ion-col size="12">
+        <h2 class="style-text-login">Iniciar Sesión</h2>
+
+        <form [formGroup]="loginForm">
+
+          <ion-input label="Username" label-placement="floating" fill="outline" placeholder="Enter username"
+            class="custom" color="medium" type="text" formControlName="username"></ion-input>
+          <!-- Validamos username -->
+
+          <div id="alerta" *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || 
+          loginForm.get('username')?.touched)">
+            <div id="alerta" *ngIf="loginForm.get('username')?.hasError('required')">
+              *Username es obligatorio
+            </div>
+            <div id="alerta" *ngIf="loginForm.get('username')?.hasError('minlength')">
+              *Username debe tener mínimo 6 caracteres
+            </div>
+          </div>
+
+          <ion-input label="password" label-placement="floating" fill="outline" placeholder="Enter password"
+            class="custom" color="medium" type="password" formControlName="password"></ion-input>
+
+          <div id="alerta" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || 
+            loginForm.get('password')?.touched)">
+            <div id="alerta" *ngIf="loginForm.get('password')?.hasError('required')">
+              *Password es obligatoria
+            </div>
+            <div id="alerta" *ngIf="loginForm.get('password')?.hasError('minlength')">
+              *Password debe tener mínimo 8 caracteres
+            </div>
+          </div>
+
+
+          <p style="text-align: end;">
+            <ion-router-link routerLink="/recuperar-contrasena" class="style-forgot-password">
+              ¿Olvidaste tu contraseña?
+            </ion-router-link>
+          </p>
+
+          <ion-button (click)="login()" expand="block" class="style-btn-login">Log In</ion-button>
+          <p class="style-btn-registrate">No tienes una cuenta?
+            <ion-router-link routerLink="/register" class="style-registrate">
+              Registrate!
+            </ion-router-link>
+          </p>
+
+        </form>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

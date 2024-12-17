@@ -1,0 +1,25 @@
+/* Estilo para el tab-bar */
+ion-tab-bar {
+  --background: #064041;
+  --color: white;
+  --border-width: 4px 0;
+  --border-style: double;
+  --min-height: 80px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}
+
+/* Color del tab cuando está seleccionado */
+ion-tab-button[aria-selected="true"] {
+  color: #6c264c; /* Color personalizado cuando el tab está seleccionado */
+}
+
+/* Establecer el color desde el inicio (cuando no está seleccionado) */
+ion-tab-button {
+  color: white; /* Cambia este valor al color predeterminado que deseas para los tabs no seleccionados */
+}
+
+/* Color cuando el tab es hover */
+ion-tab-button:hover {
+  color: #6c264c;
+}

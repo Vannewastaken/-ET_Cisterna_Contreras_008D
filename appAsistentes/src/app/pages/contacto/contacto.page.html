@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text="inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Formulario de Contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Contáctanos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (submit)="enviarFormulario()">
+        
+        <ion-item>
+          <ion-label position="stacked" required style="color: black;">Nombre</ion-label>
+          <ion-input [(ngModel)]="nombre" name="nombre" type="text" required style="color: black;"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" required style="color: black;">Correo</ion-label>
+          <ion-input [(ngModel)]="correo" name="correo" type="email" required style="color: black;"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" required style="color: black;">Asunto</ion-label>
+          <ion-input [(ngModel)]="asunto" name="asunto" type="text" required style="color: black;"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" type="submit" class="btn-style">
+          Enviar
+        </ion-button>
+      </form>
+
+
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

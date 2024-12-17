@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio" text="Inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tu Código QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="isRegistered; else notRegistered" class="qr-container">
+    <h1 style="text-align: center;">Tu QR ha sido generado!</h1>
+    <p style="text-align: center;">Presenta tu QR a la entrada del evento!</p>
+    <ion-card>
+      <ion-card-content>
+        <div class="qrcode">
+          <qrcode [qrdata]="eventCode" style="width: 200px; height: 200px;" errorCorrectionLevel="M"></qrcode>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ng-template #notRegistered>
+    <p style="margin-left: 24px; margin-top: 20px;">No estás inscrito en ningún evento. Por favor, regístrate primero.</p>
+  </ng-template>
+</ion-content>

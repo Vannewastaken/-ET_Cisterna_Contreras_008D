@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio" text="Atrás"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles del Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="evento; else noItem">
+  <!-- Datos del evento -->
+  <ion-card style="padding-top: 7%;">
+    <img [src]="evento.imagen" alt="Imagen del evento" style="display: block; margin: 0 auto; width: 100%; height: 150px; object-fit: cover;" />
+    <ion-card-header>
+      <ion-card-title style="color: black;">{{ evento.nombre }}</ion-card-title>
+      <ion-card-subtitle style="color: #F5F4FE">Fecha: {{ evento.fecha }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content style="color: black;">
+      <p>Aforo: {{ evento.aforo }}</p>
+      <p>Lugar: {{ evento.lugar }}</p>
+      <p>{{ evento.descripcion }}</p>
+    </ion-card-content>
+  </ion-card>
+  <!-- Botones de inscripción/cancelación -->
+<ion-grid style="padding: 10px;">
+  <ion-row>
+    <ion-col size="12">
+      <!-- Mostrar el botón adecuado según el estado de inscripción -->
+      <ion-button *ngIf="!isRegistered" expand="block" shape="round" color="dark" (click)="register()">
+        Inscribirse
+      </ion-button>
+
+      <ion-button *ngIf="isRegistered" expand="block" shape="round" color="danger" (click)="cancelarInscripcion()">
+        Cancelar Inscripción
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+  <!-- Comentarios -->
+  <ion-grid style="border-radius:20px; background-color: #ffffff; margin: 10px 20px 0px 20px;">
+    <ion-row >
+      <ion-col size="12" >
+        <h1 style="text-align: center; ">Comentarios </h1>
+      </ion-col>
+      <ion-col size="12" >
+        <!-- Enlace del textarea al modelo del comentario -->
+        <ion-textarea [(ngModel)]="nuevoComentario" [counter]="true" maxlength="300" style="color: black;" placeholder="Escribe tu comentario..."></ion-textarea>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <!-- Botón de Enviar comentario -->
+  <ion-button expand="block" shape="round" style="margin: 10px 10px 0px 10px;" color="dark" (click)="enviarComentario()">
+    <ion-icon slot="start" name="send"></ion-icon>
+    Enviar
+  </ion-button>
+
+</ion-content>
+
+<ng-template #noItem>
+  <ion-content>
+    <p style="color: black; margin-top: 80%; margin-left: 65px;">No hay detalles del evento seleccionados.</p>
+  </ion-content>
+</ng-template>

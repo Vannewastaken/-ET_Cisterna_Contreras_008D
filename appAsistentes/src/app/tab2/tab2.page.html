@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio" text="Inicio"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1 class="titulo">Eventos Inscritos</h1>
+  <ion-searchbar animated="true" placeholder="Buscador" class="custom"></ion-searchbar>
+
+  <!-- Lista de eventos inscritos -->
+  <ion-card *ngFor="let evento of eventosInscritos">
+    <img [src]="evento.imagen" alt="{{evento.nombre}}" style="width: 100%; height: 200px; object-fit: cover;">
+    <ion-card-header>
+      <ion-card-title>{{ evento.nombre }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Fecha: {{ evento.fecha }}</p>
+      <p>Lugar: {{ evento.lugar }}</p>
+    </ion-card-content>
+    <ion-button fill="solid" (click)="verDetalles(evento.id)">Detalles</ion-button>
+    <ion-button expand="full" (click)="verQrCode(evento)">Ver QR</ion-button>
+  </ion-card>
+  <ion-note *ngIf="eventosInscritos.length === 0" class="no-eventos">No estás inscrito en ningún evento.</ion-note>
+</ion-content>

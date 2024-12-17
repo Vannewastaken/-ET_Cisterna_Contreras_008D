@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1" text="Volver"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="usuario">
+
+  <h1 style=" margin: 10% 0px 0% 4%;">Modificar Usuario</h1>
+  <p style=" margin: 0% 0px 10% 4%; font-style: italic;">&#64;{{usuario.username}}</p>
+  
+  <!-- Campo de Nombre -->
+
+  <ion-item >
+    <ion-icon slot="start" name="person"></ion-icon>
+    <ion-input
+      id="text-font"
+      label="Nombres"
+      labelPlacement="stacked"
+      [clearInput]="true"
+      placeholder="Ingresa nuevos nombres"
+      [(ngModel)]="usuario.nombres"
+      
+    >
+    </ion-input>
+  </ion-item>
+
+    <!-- Campo de Apellido -->
+  <ion-item>
+    <ion-icon slot="start" name="people"></ion-icon>
+    <ion-input
+      id="text-font"
+      label="Apellidos"
+      labelPlacement="stacked"
+      [clearInput]="true"
+      placeholder="Ingresa nuevos apellidos"
+      [(ngModel)]="usuario.apellidos"
+      
+    >
+    </ion-input>
+  </ion-item>
+
+
+
+
+  
+
+  <!-- Campo de Email -->
+
+
+  <ion-item>
+    <ion-icon slot="start" name="mail"></ion-icon>
+    <ion-input
+      id="text-font"
+      label="Email"
+      labelPlacement="stacked"
+      [clearInput]="true"
+      placeholder="Ingresa nuevo email"
+      [(ngModel)]="usuario.email"
+      
+    >
+    </ion-input>
+  </ion-item>
+
+  <!-- Campo de Teléfono -->
+  <ion-item>
+    <ion-icon slot="start" name="call"></ion-icon>
+    <ion-label id="text-font" position="stacked">Teléfono</ion-label>
+    <ion-input
+      id="text-font"
+      label="+569"
+      type="tel"
+      [(ngModel)]="usuario.telefono"
+      maxlength="8"
+      inputmode="numeric"
+      (ionInput)="validatePhone($event)"
+      placeholder="Ingresa tu teléfono"
+      [clearInput]="true"
+      required>
+    </ion-input>
+  </ion-item>
+  <ion-text color="danger" *ngIf="telefonoInvalido()">
+    El teléfono debe tener exactamente 8 dígitos.
+  </ion-text>
+  
+  <!-- Cambiar Contraseña -->
+  <ion-item>
+    <ion-icon slot="start" [name]="passwordIcon" (click)="togglePasswordVisibility()" style="cursor: pointer;"></ion-icon>
+    <ion-label position="stacked" id="text-font" >Cambiar Contraseña</ion-label>
+    <ion-input id="text-font" [type]="passwordType" [(ngModel)]="newPassword" placeholder="Deja vacío si no deseas cambiar"></ion-input>
+  </ion-item>
+
+  <!-- Botón para guardar cambios -->
+  <ion-button expand="full" (click)="actualizarPerfil()" class="btn-guardar-style">Guardar Cambios</ion-button>
+</ion-content>
+
+

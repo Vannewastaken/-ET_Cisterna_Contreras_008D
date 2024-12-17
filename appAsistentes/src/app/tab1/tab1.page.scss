@@ -1,0 +1,79 @@
+.contenedor {
+    display: grid;
+    grid-template-rows: 20% 1fr; /* Define el tamaño del header y el espacio restante para el main */
+    height: 100%;
+    position: relative;
+}
+
+ion-content {
+    --background: #064041;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.main-style {
+    grid-row: 2;
+    background-color: #f5f4fe;
+    padding: 17% 7% 7% 7% ;
+}
+
+/* Estilo para el header */
+.header-style {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos dentro del header */
+    background-color: #064041;
+    padding: 3% 2%;
+  }
+  
+  .header-button {
+    display: flex;
+    align-items: center; /* Centra el icono y el texto dentro del botón */
+    justify-content: flex-start;
+    color: white;
+  }
+  
+  .header-button ion-icon {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  
+  .header-button p {
+    margin: 0;
+    font-size: 16px;
+    color: white;
+    line-height: 1; /* Asegúrate de que no haya espacio vertical adicional */
+  }
+  
+
+.icon-style-account {
+    color: #000000;
+    font-size: 21vw;
+    position: absolute;
+    top: calc(20%); /* Ajusta esto según la posición deseada entre el header y el main */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el icono tanto horizontal como verticalmente */
+    width: 100px; height: 100px; border-radius: 50%; 
+    outline: 0.8vh solid #064041;
+}
+
+ion-item {
+    --background: transparent;
+    --color: #000000;
+    margin-top: 5%;
+  }
+
+  ion-button.btn-editarperfil {
+    --background: #866A80;
+    --background-hover: #c49cbb;
+    --background-activated: #c49cbb;
+    --background-focused: #c49cbb;
+    --color: #091e22;
+    --border-radius: 18px; 
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    margin-top: 11%;
+  }
+
+

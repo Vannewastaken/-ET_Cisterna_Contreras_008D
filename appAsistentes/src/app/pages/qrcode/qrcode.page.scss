@@ -1,0 +1,22 @@
+
+ion-content{
+    --background:#24545D;
+    --color: black;
+}
+
+ion-card {
+    --background: #fff; 
+  }
+  
+  qrcode {
+    background-color: white !important; 
+    margin-top: 50px; 
+  }
+  .qr-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    text-align: center;
+  }

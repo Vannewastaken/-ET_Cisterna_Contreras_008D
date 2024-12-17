@@ -1,0 +1,131 @@
+<ion-content [fullscreen]="true">
+  <main class="contenedor">
+    <header>
+      <ion-grid >
+        <ion-row >
+          <ion-col size="2" class="col-icon">
+              <ion-icon name="menu" class="icon-style-account" (click)="mostrarMenu()"></ion-icon>
+          </ion-col>
+          <ion-col size="10" class="col-nametag">
+            <p class="welcome-style">Bienvenida/o!</p>
+            <p class="nametag-style">&#64;{{usuario}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </header>
+    <article>
+
+      <mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'" style="height: 300px;">
+        <mdb-carousel-item>
+          <img
+            src="assets/evento1.png"
+
+            alt="..."
+            style="height: 100%; width: 100%; object-fit: cover;"
+          />
+        </mdb-carousel-item>
+        <mdb-carousel-item>
+          <img
+            src="assets/evento2.png"
+
+            alt="..."
+            style="height: 100%; width: 100%; object-fit: cover;"
+          />
+        </mdb-carousel-item>
+      </mdb-carousel>
+
+
+
+      <ion-grid class="style-grid-bienvenida">
+        <ion-row>
+          <ion-col size="12">
+            <h3 class="beinvenida-title">Bienvenida a nuestra app de eventos!</h3>
+            <p class="style-text-bienvenida"> <strong>Visualiza</strong> los eventos, seminarios y/o talleres que imparte tu institución e <strong>Inscribete!</strong></p>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+
+
+
+
+      <ion-grid class="style-grid-img">
+        <ion-row>
+          <ion-col size="12" style="padding: 0;">
+            <ion-card class="style-card-img">
+              <ion-card-header style="padding-bottom: 0;">
+                <ion-card-title style="font-weight: 600;">Eventos!</ion-card-title>
+                <ion-card-subtitle style="color: #f6d9f6;">Click the button!</ion-card-subtitle>
+              </ion-card-header>
+              <!-- Imagen con clase para aplicar estilos -->
+              <ion-img src="assets/imgpc.png" class="img-style"></ion-img>
+              <button class="round-button" (click)="Eventos()">
+                <ion-icon name="arrow-forward"></ion-icon>
+              </button>
+          </ion-card>
+
+          </ion-col>
+
+          
+        </ion-row>
+      </ion-grid>
+
+      <div class="contenedor-eventos">
+        <div class="grid-style-circulo">
+          <div class="circle">
+            <p class="number-style">9</p>
+          </div>
+        </div>
+        <div class="grid-style-eventos">
+
+          <h1 >
+            <ion-router-link routerLink="/tabs/tab2" class="text-style-eventos">
+              Mis eventos
+            </ion-router-link>
+          </h1>
+        </div>
+      
+      </div>
+
+      
+
+
+
+      <br>
+
+
+
+
+
+      <h1 class="titulo" style="text-align: center; margin-bottom: 10%;">Nuevas noticias  <ion-icon slot="start" name="megaphone-outline"></ion-icon></h1>
+      
+      
+      <ion-grid class="grid-event" >
+        <ion-row *ngFor="let e of eventos">
+          <ion-col size="12">
+
+            <ion-card class="style-card-event">
+
+              <ion-card-header>
+                <div style="margin-right: auto;">
+                  <ion-card-subtitle class="card-subtitulo-event">Nuevo evento!</ion-card-subtitle>
+                </div>
+                <ion-card-title class="card-titulo-event">{{e.nombre}}</ion-card-title>
+
+              </ion-card-header>
+
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+      
+
+      </ion-grid>
+
+      
+    </article>
+
+
+  </main>
+
+</ion-content>
