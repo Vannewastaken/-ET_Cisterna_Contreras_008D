@@ -1,0 +1,14 @@
+ion-toolbar {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+ion-content{
+  --background: white;
+}
+
+ion-item {
+  --background: white;
+  --color: #000000;
+  margin-top: 5%;
+}

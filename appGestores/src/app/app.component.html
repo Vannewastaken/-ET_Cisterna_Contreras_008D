@@ -1,0 +1,49 @@
+<ion-app>
+
+  <ion-menu contentId="main" menuId="first" side="start" type="overlay" >
+
+      <ion-toolbar style="height: 16vh; border-radius: 0% 0% 40% 0%; color:  white;">
+        <ion-icon slot="start" name="person" size="large" style="padding-left: 15px;"></ion-icon>
+        <ion-title>Duoc UC</ion-title>
+      </ion-toolbar>
+
+
+    <ion-content >
+      <ion-list style="margin-top: 8%; background-color: white;">
+        <ion-menu-toggle *ngFor="let m of menu" (click)="handleMenuItemClick(m)">
+          <ion-item [routerLink]="m.redirecTo" detail="true">
+            <ion-icon slot="start" [name]="m.icon" style="color: black;"></ion-icon>
+            <ion-label>{{m.name}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>  
+    </ion-content>
+
+    <ion-footer>
+      <ion-toolbar >
+        <ion-buttons slot="start">
+          <ion-button fill="clear" >
+            <ion-icon name="logo-instagram" style="color: white;"></ion-icon>
+          </ion-button>
+    
+          <ion-button fill="clear">
+            <ion-icon name="logo-facebook" style="color: white;"></ion-icon>
+          </ion-button>
+    
+          <ion-button fill="clear">
+            <ion-icon name="logo-twitter" style="color: white;"></ion-icon>
+          </ion-button>
+    
+    
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+
+
+
+  </ion-menu>
+
+
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

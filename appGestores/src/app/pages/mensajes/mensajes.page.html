@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/inicio"
+        text="Inicio"
+        >
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Mensajes
+      
+      
+    </ion-title><ion-icon slot="end" name="chatbox" class="icono-mensajes"></ion-icon>
+    
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <main class="contenedor">
+    <article>
+
+
+      
+
+      <ion-grid class="grid-mensajes">
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-card class="style-card-mensaje">
+              <ion-card-header class="card-header-mensaje">
+                <ion-card-subtitle class="card-subtitulo-mensaje" style="margin-top: 10px;">Hola, ¿cómo estás?</ion-card-subtitle>
+                <ion-card-title class="card-titulo-mensaje">Juan Pérez</ion-card-title>
+              </ion-card-header>
+              <ion-card-content class="card-content-mensaje">
+                <p>Quería comentarte algo sobre el proyecto.</p>
+                <ion-icon name="chatbubble-outline"></ion-icon>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-card class="style-card-mensaje">
+              <ion-card-header class="card-header-mensaje">
+                <ion-card-subtitle class="card-subtitulo-mensaje" style="margin-top: 10px;">Nos vemos mañana</ion-card-subtitle>
+                <ion-card-title class="card-titulo-mensaje">Ana López</ion-card-title>
+              </ion-card-header>
+              <ion-card-content class="card-content-mensaje">
+                <p>¡Nos vemos mañana a las 9 a.m. en la oficina!</p>
+                <ion-icon name="chatbubble-outline"></ion-icon>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-card class="style-card-mensaje">
+              <ion-card-header class="card-header-mensaje">
+                <ion-card-subtitle class="card-subtitulo-mensaje" style="margin-top: 10px;">Recordatorio</ion-card-subtitle>
+                <ion-card-title class="card-titulo-mensaje">Carlos Rodríguez</ion-card-title>
+              </ion-card-header>
+              <ion-card-content class="card-content-mensaje">
+                <p>Recuerda la reunión del viernes.</p>
+                <ion-icon name="chatbubble-outline"></ion-icon>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </article>
+  </main>
+</ion-content>

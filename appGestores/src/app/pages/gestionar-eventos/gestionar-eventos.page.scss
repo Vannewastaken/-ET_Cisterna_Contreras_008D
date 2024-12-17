@@ -1,0 +1,58 @@
+.grid-detalle-eventos {
+
+  max-height: 100vh;
+  background-color: #064041;
+}
+
+
+p.custom {
+  margin-block-end: 5px;
+  margin-block-start: 5px;
+}
+
+ion-button {
+  --background: #866A80;
+  --background-hover: #9ce0be;
+  --background-activated: #f6d9f6;
+  --background-focused: #f6d9f6;
+  --color: rgb(0, 0, 0);
+  --border-radius: 8px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  width: 48vw;
+}
+
+.toolbar-style {
+  background-color: #064041;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+ion-content {
+  --background: white
+}
+
+.div-buttons{
+  display: flex; 
+  gap: 10px; 
+  justify-content: center; 
+  margin-bottom: 4%;
+}
+
+.participantes-title{
+  color: black; 
+  text-align: center; 
+  margin-top: 10%
+}
+
+.lista-participantes{
+  background-color: white; 
+  width: 80%;
+  justify-self: center;
+}
+.item-participante{
+--background: white; 
+  color: black;
+}

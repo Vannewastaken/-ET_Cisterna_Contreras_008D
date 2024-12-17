@@ -1,0 +1,239 @@
+ion-content {
+  --background: #064041;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+  //Estilo para el contenedor que incluye el header y el article
+.contenedor {
+  display: grid;
+  grid-template-rows: 130px 1fr;
+  /* Define el tamaño del header y el espacio restante para article */
+  height: 100%;
+}
+
+
+//Estilo para el header
+header {
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  /* Centra verticalmente el contenido del header */
+  justify-content: center;
+  /* Centra horizontalmente el contenido del header */
+  background-color: #064041;
+  padding: 0 16px;
+  /* Ajusta el padding según sea necesario */
+}
+
+
+
+//Estilo para la fila del ionrow
+ion-row {
+  display: flex;
+  align-items: center;
+  /* Centra verticalmente el contenido dentro de la fila */
+  height: 100%;
+  /* Asegura que la fila ocupe toda la altura del grid */
+}
+
+//Estilo para la columna del icon
+.col-icon {
+  display: flex;
+  align-items: center;
+  /* Centra verticalmente el ícono dentro de la columna */
+  justify-content: center;
+  /* Centra horizontalmente el ícono dentro de la columna */
+}
+
+//Estilo para la columna donde esta el texto del user y bienvenida
+.col-nametag {
+  background-color: #f5f4fe;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 3px 10px 15px 20px;
+}
+
+//Estilo para el contenedor donde ira todo el contenido
+article {
+  grid-row: 2;
+  background-color: #f5f4fe;
+  border-radius: 25px 25px 0px 0px;
+  padding: 7%;
+}
+
+//ESTILOS PARA TODO DEL HEADER
+
+
+//Estilo para el icon de perfil que proximamente será la img de perfil
+.icon-style-account {
+  font-size: 45px;
+  color: #7ab7b9
+}
+
+//Estilo para el texto de bienvenida
+.welcome-style {
+  margin: 12px 0px;
+  font-size: 15px;
+  font-style: italic;
+  opacity: .8;
+  color: #5c5f68;
+
+}
+
+//Estilo para el texto del user
+.nametag-style {
+  margin: 0px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #4a4d57;
+}
+
+//ESTILOS PARA TODO DEL ARTICLE
+
+
+//Estilos para los titulos
+.titulo {
+  font-weight: 700;
+  margin-top: 10%;
+  color: black;
+}
+
+//Estilos para las cartas en general
+ion-card-header {
+  padding-bottom: 5px;
+}
+
+//Estilo para el titulo del card de eventos
+.card-titulo-event {
+
+  font-size: 22px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: black
+}
+
+//estilo para el contenido del card de eventos
+.card-subtitulo-event {
+  background-color: #f6d9f6;
+  padding: 4px 7px 3px 7px;
+  border-radius: 20px;
+  align-content: center;
+  text-align: center;
+  font-size: 10px;
+  color: black;
+
+}
+
+//Estilos para las cartas de eventos
+.style-card-event{
+  height: 130px; 
+  border-radius: 30px;
+  background-color: #f5f4fe;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow effect */
+}
+
+//estilo para el contenedor o grid de eventos
+.grid-event{
+  border-radius: 10px;
+  background-color:#24545d ;
+}
+
+//Estilos para el primer grid/card
+.style-grid-img{
+
+  background-color: #049b93; 
+  border-radius: 10px 50px 10px 10px;
+  margin-top: 3%;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+}
+
+
+
+.img-style {
+  width: 50%; /* Ajusta el ancho de la imagen */
+  height: 50% ; /* Ajusta la altura de la imagen */
+  object-fit: contain; /* Ajusta la imagen dentro de las dimensiones especificadas sin distorsionar */
+  margin: right; /* Centra la imagen dentro del contenedor */
+  display: block; /* Asegura que la imagen se trate como un bloque centrado */
+  opacity: .9;
+
+}
+
+.round-button {
+  width: 50px; /* Ancho del botón */   
+  height: 50px; /* Altura del botón, igual al ancho para mantener redondez */    
+  border-radius: 50%; /* Hace el botón completamente redondo */   
+  background-color: #f6d9f6;/* Color de fondo */   
+  color: #4a4d57; /* Color del texto  o icono */    
+  border: none; /* Sin borde */    
+  display: flex; /* Usar Flexbox para centrar el contenido */    
+  justify-content: center; /* Centra el contenido horizontalmente */    
+  align-items: center; /* Centra el contenido verticalmente */   
+  cursor: pointer;/* Cambia el cursor a mano al pasar sobre el botón */  
+  font-size: 20px;        /* Tamaño del icono o texto dentro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+}
+
+
+.style-card-img{
+  margin: 0; 
+  background-color: #049b93; 
+  border-radius: 10px 50px 10px 10px;
+}
+
+
+
+
+  .style-text-card-content{
+    color: black;
+  }
+
+
+//PRIMER GRID
+.style-grid-bienvenida {
+  border-radius: 10px 10px 10px 10px;
+  margin: 10% 0%;
+  padding: 5%;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.beinvenida-title{
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.style-text-bienvenida{
+  color: #000000b7;
+  text-align: center;
+}
+
+//botones
+ion-button {
+  
+  --background: #866A80;
+  --background-hover: #c49cbb;
+  --background-activated: #c49cbb;
+  --background-focused: #c49cbb;
+  
+  --color: #091e22;
+  --border-radius: 18px; 
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  
+
+}
+
+ion-button.btn-gestion-eventos{
+  font-size: 5vw;
+  font-weight: 600;
+  height: 7vh;
+  margin-top: 10%;
+}
+

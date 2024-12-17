@@ -1,0 +1,69 @@
+/* Estilos generales para los cards de mensajes */
+.card-header-mensaje {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Estilo para el título de cada mensaje (nombre del mensaje o asunto) */
+  .card-titulo-mensaje {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #F6D9F6;
+    margin: 0;
+    color: #000000;
+    border-radius: 7px;
+    padding: 4px 8px;
+    
+  }
+  
+  /* Estilo para el subtítulo (nombre del remitente) */
+  .card-subtitulo-mensaje {
+    font-size: 14px;
+    color: #000000;
+    
+    padding: 4px 8px;
+    border-radius: 10px;
+  }
+  
+  /* Estilo del contenido del mensaje */
+  .card-content-mensaje {
+    font-size: 14px;
+    color: #000000;
+    padding-top: 5px;
+    opacity: 0.7;
+  }
+  
+  /* Icono de chat dentro del card */
+  ion-icon {
+    font-size: 18px;
+    color: #ffffff;
+    margin-left: 10px;
+  }
+  
+  /* Estilo general de los cards para mensajes */
+  .style-card-mensaje {
+    border-radius: 15px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #F5F4FE;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+ 
+  
+  /* Espaciado para los grids de mensajes */
+  .grid-mensajes {
+    margin-top: 20px;
+  }
+  .icono-mensajes{
+    margin-right: 35%;
+  }
+ion-content{
+  --background: rgb(4,155,147);
+  --background: linear-gradient(0deg, rgba(4,155,147,1) 0%, rgba(13,135,132,1) 61%, rgba(36,84,93,1) 100%);
+}
+  

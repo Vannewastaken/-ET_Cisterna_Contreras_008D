@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio" text="Inicio"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Eventos</h1>
+
+  <ion-button expand="block" fill="clear" shape="round" routerLink="/crear-evento">
+    Crear evento!
+  </ion-button>
+
+  <!-- Contenedor que asegura que las cartas se centren -->
+  <div class="card-container">
+    <ion-card *ngFor="let e of eventos" (click)="buscarEvento(e)">
+      <ion-card-header>
+        <ion-card-title>{{ e.nombre }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>Fecha: {{ e.fecha }}</p>
+        <p>Ubicación: {{ e.lugar }}</p>
+      </ion-card-content>
+      <ion-button fill="clear" shape="round" expand="full" [routerLink]="['/gestionar-eventos', e.id]">
+        Gestionar
+      </ion-button>
+    </ion-card>
+  </div>
+</ion-content>

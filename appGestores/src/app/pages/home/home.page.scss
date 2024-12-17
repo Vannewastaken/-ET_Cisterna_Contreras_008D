@@ -1,0 +1,254 @@
+ion-content {
+    --background: #064041;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  //Estilo para el header
+  header {
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente el contenido del header */
+    justify-content: center;
+    /* Centra horizontalmente el contenido del header */
+    background-color: #064041;
+    padding: 0 16px;
+    /* Ajusta el padding según sea necesario */
+  }
+  
+  //Estilo para el contenedor que incluye el header y el article
+  .contenedor {
+    display: grid;
+    grid-template-rows: 130px 1fr;
+    /* Define el tamaño del header y el espacio restante para article */
+    height: 100%;
+  }
+  
+  
+  
+  .vertical-center-grid {
+    height: 100%;
+    /* Asegura que el grid ocupe toda la altura disponible del header */
+  }
+  
+  //Estilo para la fila del ionrow
+  ion-row {
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente el contenido dentro de la fila */
+    height: 100%;
+    /* Asegura que la fila ocupe toda la altura del grid */
+  }
+  
+  //Estilo para la columna del icon
+  .col-icon {
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente el ícono dentro de la columna */
+    justify-content: center;
+    /* Centra horizontalmente el ícono dentro de la columna */
+  }
+  
+  //Estilo para la columna donde esta el texto del user y bienvenida
+  .col-nametag {
+    background-color: #f5f4fe;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 3px 10px 15px 20px;
+  }
+  
+  //Estilo para el contenedor donde ira todo el contenido
+  article {
+    grid-row: 2;
+    background-color: #f5f4fe;
+    border-radius: 25px 25px 0px 0px;
+    padding: 7%;
+  }
+  
+  //ESTILOS PARA TODO DEL HEADER
+  
+  
+  //Estilo para el icon de perfil que proximamente será la img de perfil
+  .icon-style-account {
+    font-size: 70px;
+    color: #7ab7b9
+  }
+  
+  //Estilo para el texto de bienvenida
+  .welcome-style {
+    margin: 12px 0px;
+    font-size: 15px;
+    font-style: italic;
+    opacity: .8;
+    color: #5c5f68;
+    font-weight: 600;
+  }
+  
+  //Estilo para el texto del user
+  .nametag-style {
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #4a4d57;
+  }
+  
+  //ESTILOS PARA TODO DEL ARTICLE
+  
+  
+  //Estilos para los titulos
+  .titulo {
+    font-weight: 700;
+    margin-top: 10%;
+  }
+  
+  //Estilos para las cartas en general
+  ion-card-header {
+    padding-bottom: 5px;
+  }
+  
+  //Estilo para el titulo del card de eventos
+  .card-titulo-event {
+  
+    font-size: 22px;
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+  
+  //estilo para el contenido del card de eventos
+  .card-subtitulo-event {
+    background-color: #f6d9f6;
+    padding: 4px 7px 3px 7px;
+    border-radius: 20px;
+    align-content: center;
+    text-align: center;
+    font-size: 10px;
+  }
+  
+  //Estilos para las cartas de eventos
+  .style-card-event{
+    height: 130px; 
+    border-radius: 30px;
+    background-color: #f5f4fe;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow effect */
+  }
+  
+  //estilo para el contenedor o grid de eventos
+  .grid-event{
+    border-radius: 10px;
+    background-color:#24545d ;
+  }
+  
+  //Estilos para el primer grid/card
+  .style-grid-img{
+  
+    background-color: #049b93; 
+    border-radius: 10px 50px 10px 10px;
+    margin-top: 3%;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+  }
+  
+  
+  
+  .img-style {
+    width: 50%; /* Ajusta el ancho de la imagen */
+    height: 50% ; /* Ajusta la altura de la imagen */
+    object-fit: contain; /* Ajusta la imagen dentro de las dimensiones especificadas sin distorsionar */
+    margin: right; /* Centra la imagen dentro del contenedor */
+    display: block; /* Asegura que la imagen se trate como un bloque centrado */
+    opacity: .9;
+  
+  }
+  
+  .round-button {
+    width: 50px; /* Ancho del botón */   
+    height: 50px; /* Altura del botón, igual al ancho para mantener redondez */    
+    border-radius: 50%; /* Hace el botón completamente redondo */   
+    background-color: #f6d9f6;/* Color de fondo */   
+    color: #4a4d57; /* Color del texto  o icono */    
+    border: none; /* Sin borde */    
+    display: flex; /* Usar Flexbox para centrar el contenido */    
+    justify-content: center; /* Centra el contenido horizontalmente */    
+    align-items: center; /* Centra el contenido verticalmente */   
+    cursor: pointer;/* Cambia el cursor a mano al pasar sobre el botón */  
+    font-size: 20px;        /* Tamaño del icono o texto dentro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+  }
+  
+  .round-button:hover {
+    background-color: #e49ee4c7;
+    /* Cambia color al pasar el cursor */
+  }
+  
+  .style-card-img{
+    margin: 0; 
+    background-color: #049b93; 
+    border-radius: 10px 50px 10px 10px;
+  }
+  
+  //Grid para mis eventos
+  .contenedor-eventos {
+      background-color: #866a80;
+      border-radius: 10px;
+      box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+      margin-top: 8%;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 30vw 70vw;
+      grid-template-rows: 100px;
+      grid-template-areas:
+        "circle evento";
+    }
+    
+    .grid-style-circulo {
+  
+      grid-area: circle;
+      display: flex; /* Usa Flexbox para centrar */
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+    }
+    
+    .circle {
+      background-color: #ffe6f7;
+      width: 75%; /* Ajusta para que ocupe el 90% del contenedor */
+      height: 75%; /* Ajusta para que ocupe el 90% del contenedor */
+      border-radius: 10% 40% 10% 10%; /* Hace que el div sea redondo */
+      box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+      display: flex; /* Añade Flexbox */
+      align-items: center; /* Centra verticalmente */
+      justify-content: center; /* Centra horizontalmente */
+    }
+    .number-style{
+      font-weight: 900;
+      font-size: 4rem; /* Ajusta el tamaño del texto para ocupar más espacio */
+      margin: 5%; /* Elimina márgenes para centrar mejor */
+      line-height: 1; /* Asegura que la línea del texto ocupe todo el espacio */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      text-align: center; /* Centra el texto */
+      color: rgb(65, 62, 63);
+    }
+    
+    .grid-style-eventos {
+  
+      grid-area: evento;
+      display: flex; /* Añade Flexbox */
+      align-items: center; /* Centra verticalmente */
+      padding-left: 5%; /* Puedes ajustar o remover según sea necesario */
+   
+    }
+  
+    .text-style-eventos{
+      font-weight: 800;
+      color: black;
+      font-style:italic ;
+    }
+    
+  

@@ -1,0 +1,113 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="Atras"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Modificar eventos
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-card>
+
+
+    <ion-card-content>
+      <form [formGroup]="modificarForm">
+        <div (click)="seleccionarImagenEvento()">
+          <img [src]="eventito.imagen || 'assets/windows.jpg'" 
+               alt="Imagen del Evento" 
+               class="image-style-event" />
+        </div>
+        <input type="file" id="fileInputEvento" hidden (change)="onFileSelectedEvento($event)" />
+
+        <ion-item>
+          <ion-label position="stacked">Nombre evento</ion-label>
+          <ion-input type="text" placeholder="Ingrese Nombre evento" name="name" [(ngModel)]="eventito.nombre"
+            formControlName="nombre"></ion-input>
+        </ion-item>
+
+        <div id="alerta"
+          *ngIf="modificarForm.get('nombre')?.invalid && (modificarForm.get('nombre')?.dirty || modificarForm.get('nombre')?.touched)">
+          <div *ngIf="modificarForm.get('nombre')?.hasError('required')">
+            *El nombre del evento es obligatorio.
+          </div>
+          <div *ngIf="modificarForm.get('nombre')?.hasError('minlength')">
+            *El nombre del evento debe tener al menos 6 caracteres.
+          </div>
+        </div>
+
+        <ion-item>
+          <ion-label position="stacked">Aforo</ion-label>
+          <ion-input type="number" placeholder="Ingrese Aforo" name="aforo" [(ngModel)]="eventito.aforo"
+            formControlName="aforo"></ion-input>
+        </ion-item>
+
+        <div id="alerta"
+          *ngIf="modificarForm.get('aforo')?.invalid && (modificarForm.get('aforo')?.dirty || modificarForm.get('aforo')?.touched)">
+          <div *ngIf="modificarForm.get('aforo')?.hasError('required')">
+            *El aforo es obligatorio.
+          </div>
+          <div *ngIf="modificarForm.get('aforo')?.hasError('pattern')">
+            *El aforo debe ser un número mayor a 0.
+          </div>
+        </div>
+
+        <ion-item>
+          <ion-label position="stacked">Fecha</ion-label>
+          <ion-input type="text" placeholder="Ingrese Fecha" name="date" [(ngModel)]="eventito.fecha"
+            formControlName="fecha"></ion-input>
+        </ion-item>
+
+        <div id="alerta"
+          *ngIf="modificarForm.get('fecha')?.invalid && (modificarForm.get('fecha')?.dirty || modificarForm.get('fecha')?.touched)">
+          <div *ngIf="modificarForm.get('fecha')?.hasError('required')">
+            *La fecha del evento es obligatoria.
+          </div>
+          <div *ngIf="modificarForm.get('fecha')?.hasError('pattern')">
+            *La fecha debe tener el formato YYYY-MM-DD.
+          </div>
+        </div>
+
+        <ion-item>
+          <ion-label position="stacked">Ubicación</ion-label>
+          <ion-input type="text" placeholder="Ingrese Ubicación" name="ubi" [(ngModel)]="eventito.lugar"
+            formControlName="lugar"></ion-input>
+        </ion-item>
+
+        <div id="alerta"
+          *ngIf="modificarForm.get('lugar')?.invalid && (modificarForm.get('lugar')?.dirty || modificarForm.get('lugar')?.touched)">
+          <div *ngIf="modificarForm.get('lugar')?.hasError('required')">
+            *La ubicación es obligatoria.
+          </div>
+          <div *ngIf="modificarForm.get('lugar')?.hasError('minlength')">
+            *La ubicación debe tener al menos 10 caracteres.
+          </div>
+        </div>
+
+        <ion-item>
+          <ion-textarea  label="Descripción" labelPlacement="stacked" [autoGrow]="true" placeholder="Ingrese descripción" name="desc" [(ngModel)]="eventito.descripcion"
+            formControlName="descripcion"></ion-textarea>
+        </ion-item>
+
+        <div id="alerta"
+          *ngIf="modificarForm.get('descripcion')?.invalid && (modificarForm.get('descripcion')?.dirty || modificarForm.get('descripcion')?.touched)">
+          <div *ngIf="modificarForm.get('descripcion')?.hasError('required')">
+            *La descripción es obligatoria.
+          </div>
+          <div *ngIf="modificarForm.get('descripcion')?.hasError('minlength')">
+            *La descripción debe tener al menos 20 caracteres.
+          </div>
+        </div>
+
+        <ion-button (click)="actualizarEvento(this.eventito)" expand="block" class="style-btn-login"
+          [disabled]="!modificarForm.valid">Confirmar Cambios</ion-button>
+
+      </form>
+
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

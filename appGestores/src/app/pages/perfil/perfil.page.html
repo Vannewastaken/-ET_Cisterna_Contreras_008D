@@ -1,0 +1,44 @@
+
+<ion-content *ngIf="usuario">
+
+
+  <div class="contenedor">
+    <header class="header-style" >
+      <ion-button routerLink="/inicio" expand="block" fill="clear" shape="round" color="light" class="header-button">
+        <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+        <p>Inicio</p>
+      </ion-button>
+    </header>
+ 
+      <div (click)="seleccionarImagen()">
+        <img [src]="usuario?.imagen || 'assets/default-avatar.png'" alt="Perfil"  class="icon-style-account" >
+      </div>
+      <!-- Input para seleccionar imagen, está oculto pero se dispara al hacer clic en el avatar -->
+      <input type="file" id="fileInput" hidden (change)="onFileSelected($event)" />
+
+
+
+      <main class="main-style" style="text-align: center;">
+        <h1 style="color: black;">{{ usuario.nombres }} {{ usuario.apellidos }}</h1>
+        <p style="color: black; margin-bottom: 10%;">&#64;{{usuario.username}}</p>
+
+        <ion-item >
+          <ion-label id="text-font">Email: {{ usuario.email }}</ion-label>
+          <ion-icon slot="start" name="mail"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label id="text-font">Teléfono: {{ usuario.telefono }}</ion-label>
+          <ion-icon slot="start" name="call"></ion-icon>
+        </ion-item>
+  
+        <ion-button size="block" class="btn-editarperfil" (click)="editarPerfil()">
+          Editar perfil
+          <ion-icon slot="end" name="pencil"></ion-icon>
+        </ion-button>
+  
+      </main>
+
+
+
+  </div>
+</ion-content>

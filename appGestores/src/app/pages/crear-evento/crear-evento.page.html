@@ -1,0 +1,108 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text="Atras"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Crear eventos
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Crear evento</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="crearForm">
+        <div (click)="seleccionarImagenEvento()">
+          <img [src]="newEvento.imagen || 'assets/windows.jpg'" 
+               alt="Imagen del Evento"
+               class="image-style-event" />
+        </div>
+        <input type="file" id="fileInputEvento" hidden (change)="onFileSelectedEvento($event)" />
+      <ion-item>
+        <ion-label position="stacked">Nombre evento</ion-label>
+        <ion-input type="text" placeholder="Ingrese Nombre evento" name="name" [(ngModel)]="newEvento.nombre" formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <div id="alerta" *ngIf="crearForm.get('nombre')?.invalid && (crearForm.get('nombre')?.dirty || crearForm.get('nombre')?.touched)">
+        <div *ngIf="crearForm.get('nombre')?.hasError('required')">
+          *El nombre del evento es obligatorio.
+        </div>
+        <div *ngIf="crearForm.get('nombre')?.hasError('minlength')">
+          *El nombre del evento debe tener al menos 6 caracteres.
+        </div>
+      </div>
+
+      <ion-item>
+        <ion-label position="stacked">Aforo</ion-label>
+        <ion-input type="number" placeholder="Ingrese Aforo" name="aforo" [(ngModel)]="newEvento.aforo" formControlName="aforo"></ion-input>
+      </ion-item>
+
+      <div id="alerta" *ngIf="crearForm.get('aforo')?.invalid && (crearForm.get('aforo')?.dirty || crearForm.get('aforo')?.touched)">
+        <div *ngIf="crearForm.get('aforo')?.hasError('required')">
+          *El aforo es obligatorio.
+        </div>
+        <div *ngIf="crearForm.get('aforo')?.hasError('pattern')">
+          *El aforo debe ser un número mayor a 0.
+        </div>
+      </div>
+
+      <ion-item>
+        <ion-label position="stacked">Fecha</ion-label>
+        <ion-input type="text" placeholder="Ingrese Fecha" name="date" [(ngModel)]="newEvento.fecha" formControlName="fecha"></ion-input>
+      </ion-item>
+
+      <div id="alerta" *ngIf="crearForm.get('fecha')?.invalid && (crearForm.get('fecha')?.dirty || crearForm.get('fecha')?.touched)">
+        <div *ngIf="crearForm.get('fecha')?.hasError('required')">
+          *La fecha del evento es obligatoria.
+        </div>
+        <div *ngIf="crearForm.get('fecha')?.hasError('pattern')">
+          *La fecha debe tener el formato YYYY-MM-DD.
+        </div>
+      </div>
+
+
+      <ion-item>
+        <ion-label position="stacked" >Ubicación</ion-label>
+        <ion-input type="text" placeholder="Ingrese Ubicación" name="ubi" [(ngModel)]="newEvento.lugar" formControlName="lugar"></ion-input>
+      </ion-item>
+
+      
+      <div id="alerta" *ngIf="crearForm.get('lugar')?.invalid && (crearForm.get('lugar')?.dirty || crearForm.get('lugar')?.touched)">
+        <div *ngIf="crearForm.get('lugar')?.hasError('required')">
+          *La ubicación es obligatoria.
+        </div>
+        <div *ngIf="crearForm.get('lugar')?.hasError('minlength')">
+          *La ubicación debe tener al menos 10 caracteres.
+        </div>
+      </div>
+
+      <ion-item >
+        <ion-textarea  label="Descripción" labelPlacement="stacked" [autoGrow]="true" placeholder="Ingrese descripción" name="desc" [(ngModel)]="newEvento.descripcion" formControlName="descripcion" ></ion-textarea>
+      </ion-item>
+
+      
+      <div id="alerta" *ngIf="crearForm.get('descripcion')?.invalid && (crearForm.get('descripcion')?.dirty || crearForm.get('descripcion')?.touched)">
+        <div *ngIf="crearForm.get('descripcion')?.hasError('required')">
+          *La descripción es obligatoria.
+        </div>
+        <div *ngIf="crearForm.get('descripcion')?.hasError('minlength')">
+          *La descripción debe tener al menos 20 caracteres.
+        </div>
+      </div>
+
+      <ion-button  expand="block" class="style-btn-login" (click)="crearEvento()" [disabled]="!crearForm.valid">Confirmar Cambios</ion-button>
+      
+      </form>
+      
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

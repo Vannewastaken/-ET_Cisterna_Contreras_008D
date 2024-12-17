@@ -1,0 +1,46 @@
+<ion-content>
+  <!-- Video para escanear QR -->
+  <div *ngIf="isVideoVisible" style="position: relative; width: 100%; height: 100%; background-color: black;">
+    <video
+      id="video"
+      autoplay
+      playsinline
+      style="width: 100%; height: 100%; display: block;">
+    </video>
+  </div>
+
+  <!-- Información del asistente escaneado -->
+  <div *ngIf="asistenteData" style="text-align: center; color: black;">
+    <ion-grid class="grid-toolbar">
+      <ion-row>
+        <ion-col size="12" class="row-toolbar">
+          <!-- Flecha para retroceder -->
+          <ion-icon 
+            name="arrow-back"  
+            class="style-icon" 
+            routerLink="/inicio">
+          </ion-icon>
+          <!-- Título -->
+          <h1 class="titulo-toolbar">Información Qr</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ion-grid style="padding: 5%;">
+      <ion-row>
+        <ion-col size="12" style="color: black;">
+          <h2 style="text-align: center;">Información del Asistente</h2>
+          <!-- Depuración de asistenteData -->
+          <p *ngIf="asistenteData?.username">DEBUG: {{ asistenteData?.username }}</p>
+          <ion-card style="background-color: white; margin-top: 10%;">
+            <ion-card-content style="color: rgba(0, 0, 0, 0.806);">
+              <p><strong>Email: </strong>{{ asistenteData?.email }}</p>
+              <p><strong>Evento: </strong>{{ asistenteData?.nombre }}</p>
+              <p><strong>Fecha: </strong>{{ asistenteData?.fecha }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

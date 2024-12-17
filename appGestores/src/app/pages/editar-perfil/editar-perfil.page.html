@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/perfil" text="Volver"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="gestor">
+  <h1 style="margin: 10% 0px 0% 4%; color: black;">Modificar Usuario</h1>
+  <p style="margin: 0% 0px 10% 4%; font-style: italic; color: black;">&#64;{{gestor.username}}</p>
+
+  <form [formGroup]="modificarPerfilForm">
+    <!-- Campo de Nombres -->
+    <ion-item>
+      <ion-icon slot="start" name="person" ></ion-icon>
+      <ion-input
+        id="text-font"
+        label="Nombres"
+        labelPlacement="stacked"
+        [clearInput]="true"
+        placeholder="Ingresa nuevos nombres"
+        formControlName="nombres">
+      </ion-input>
+    </ion-item>
+    <div *ngIf="modificarPerfilForm.get('nombres')?.invalid && modificarPerfilForm.get('nombres')?.touched" id="alerta">
+      <div *ngIf="modificarPerfilForm.get('nombres')?.hasError('required')">
+        *El nombre es obligatorio.
+      </div>
+      <div *ngIf="modificarPerfilForm.get('nombres')?.hasError('minlength')">
+        *El nombre debe tener al menos 3 caracteres.
+      </div>
+    </div>
+
+    <!-- Campo de Apellidos -->
+    <ion-item>
+      <ion-icon slot="start" name="people"></ion-icon>
+      <ion-input
+        id="text-font"
+        label="Apellidos"
+        labelPlacement="stacked"
+        [clearInput]="true"
+        placeholder="Ingresa nuevos apellidos"
+        formControlName="apellidos">
+      </ion-input>
+    </ion-item>
+    <div *ngIf="modificarPerfilForm.get('apellidos')?.invalid && modificarPerfilForm.get('apellidos')?.touched" id="alerta">
+      <div *ngIf="modificarPerfilForm.get('apellidos')?.hasError('required')">
+        *El apellido es obligatorio.
+      </div>
+      <div *ngIf="modificarPerfilForm.get('apellidos')?.hasError('minlength')">
+        *El apellido debe tener al menos 3 caracteres.
+      </div>
+    </div>
+
+    <!-- Campo de Email -->
+    <ion-item>
+      <ion-icon slot="start" name="mail"></ion-icon>
+      <ion-input
+        id="text-font"
+        label="Email"
+        labelPlacement="stacked"
+        [clearInput]="true"
+        placeholder="Ingresa nuevo email"
+        formControlName="email">
+      </ion-input>
+    </ion-item>
+    <div *ngIf="modificarPerfilForm.get('email')?.invalid && modificarPerfilForm.get('email')?.touched" id="alerta">
+      <div *ngIf="modificarPerfilForm.get('email')?.hasError('required')">
+        *El email es obligatorio.
+      </div>
+      <div *ngIf="modificarPerfilForm.get('email')?.hasError('email')">
+        *El formato del email no es válido.
+      </div>
+    </div>
+
+    <!-- Campo de Teléfono -->
+    <ion-item>
+      <ion-icon slot="start" name="call"></ion-icon>
+      <ion-label id="text-font" position="stacked" style="color: black;">Teléfono</ion-label>
+      <ion-input
+        id="text-font"
+        type="tel"
+        maxlength="8"
+        inputmode="numeric"
+        placeholder="Ingresa tu teléfono"
+        formControlName="telefono"
+        (ionInput)="validatePhone($event)">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="telefonoInvalido()">
+      El teléfono debe tener exactamente 8 dígitos.
+    </ion-text>
+
+    <!-- Cambiar Contraseña -->
+    <ion-item>
+      <ion-icon slot="start" [name]="passwordIcon" (click)="togglePasswordVisibility()" style="cursor: pointer;"></ion-icon>
+      <ion-label position="stacked" id="text-font" style="color: black;">Cambiar Contraseña</ion-label>
+      <ion-input
+        id="text-font"
+        [type]="passwordType"
+        placeholder="Deja vacío si no deseas cambiar"
+        formControlName="password">
+      </ion-input>
+    </ion-item>
+    <div *ngIf="modificarPerfilForm.get('password')?.invalid && modificarPerfilForm.get('password')?.touched" id="alerta">
+      <div *ngIf="modificarPerfilForm.get('password')?.hasError('pattern')">
+        *La contraseña debe tener al menos 8 caracteres, incluyendo una letra y un número.
+      </div>
+    </div>
+
+    <!-- Botón para guardar cambios -->
+    <ion-button  (click)="actualizarPerfil()" class="btn-guardar-style" [disabled]="!modificarPerfilForm.valid">
+      Guardar Cambios
+    </ion-button>
+  </form>
+</ion-content>
